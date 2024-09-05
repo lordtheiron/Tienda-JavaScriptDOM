@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS-->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/loginCSS.css">
+    <link rel="stylesheet" href="css/ofertasCSS.css">
+    <link rel="stylesheet" href="css/buscadorCSS.css">
+    <link rel="stylesheet" href="css/cookiesCSS.css">
+    <link rel="stylesheet" href="css/detallesCSS.css">
+    <link rel="stylesheet" href="css/calificarCSS.css">
+    <link rel="stylesheet" href="css/signinCSS.css">
+    <link rel="stylesheet" href="css/carroCSS.css">
+    <!-- JS-->
+    <script defer src="output/bundle.js" type="module"></script>
+    <!--<script src="src/Modulos/productosJS.js"></script>-->
+    <!--<script src="src/Modulos/busquedaJS.js"></script>-->
+    <script src="src/Modulos/cookiesJS.js"></script>
+    <script src="src/Modulos/detallesJS.js"></script>
+    <script src="src/Modulos/infoProdJS.js"></script>
+    <script src="src/Modulos/dmcaJS.js"></script>
+    <!--<script src="src/Modulos/registroJS.js"></script>-->
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <title>Tienda</title>
+</head>
+
+<body>
+    <nav class="menu" id="menu">
+        <div class="contenedor contenedor-botones-menu">
+            <button id="btn-menu-barras" class="btn-menu-barras"><i class="fas fa-bars"></i></button>
+            <button id="btn-menu-cerrar" class="btn-menu-cerrar"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="contenedor contenedor-enlaces-nav">
+            <div class="btn-departamentos" id="btn-departamentos">
+                <p>Todas las <span>Categor&iacute;as</span></p>
+                <i class="fas fa-caret-down"></i>
+            </div>
+            <div>
+                <p style="color: white;font-size: large;" onclick="limpiar();sacaOfertas();"><b><u><span>=>OFERTAS<=</span></u></b></p>
+                <div class="container">
+                    <input type="text" id="searchBar" placeholder="Buscar Juego">
+                    <div class="search"></div>
+                </div>
+            </div>
+            <div class="enlaces">
+                <a href="#" onclick="dmca();" id="dmca">DMCA</a>
+                <a href="#" onclick="regForm();" id="registrarse">Registrarse</a>
+                <a href="#" id="carro">Carro</a>
+            </div>
+        </div>
+
+        <div class="contenedor contenedor-grid">
+            <div class="grid" id="grid">
+                <div class="categorias">
+                    <button class="btn-regresar"><i class="fas fa-arrow-left"></i> Regresar</button>
+                    <h3 class="subtitulo">Categorias</h3>
+                    <a href="#" data-categoria="Shooter" id="1" class="categoria">Shooter <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="AventuraGrafica" id="2" class="categoria">Aventura Gr&aacute;fica <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Lucha" id="3" class="categoria">Lucha <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Puzle" id="4" class="categoria">Puzle <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Accion" id="5" class="categoria">Acci&oacute;n <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Deportes" id="6" class="categoria">Deportes<i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Multijugador Online" id="7" class="categoria">Multijugador Online <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Simulacion" id="8" class="categoria">Simulaci&oacute;n <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Estrategia" id="9" class="categoria">Estrategia <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Musical" id="10" class="categoria">Musical <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Plataformas" id="11" class="categoria">Plataformas <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Rol" id="12" class="categoria">Rol <i class="fas fa-angle-right"></i></a>
+                    <a href="#" data-categoria="Velocidad" id="13" class="categoria">Velocidad <i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="contenedor-subcategorias">
+                    <div class="subcategoria" data-categoria="Shooter">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                            <h3 class="subtitulo">Shooter</h3>
+                            <a href="#" id="1" class="subcat">Shooter Multijugador</a>
+                            <a href="#" id="2" class="subcat">Primera Persona</a>
+                            <a href="#" id="3" class="subcat">Realista o Tactico</a>
+                            <a href="#" id="4" class="subcat">Light Gun Shooter</a>
+                            <a href="#" id="5" class="subcat">Shooter en Tercera Persona</a>
+                            <a href="#" id="6" class="subcat">Shoot'em up</a>
+                        </div>
+                        <div class="banner-subcategoria">
+                            <a href="#">
+                                <img src="img/warframe.jpg" alt=" ">
+                            </a>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="#">
+                                <img src="img/tarkov.jpeg" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="img/payday1.jpg" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="img/payday2.jpeg" alt=" ">
+                            </a>
+                            <a href="# ">
+                                <img src="img/payday3.jpg " alt=" ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategoria" data-categoria="AventuraGrafica">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar "><i class="fas fa-arrow-left"></i>Regresar</button>
+                            <h3 class="subtitulo">Aventura Gr&aacute;fica </h3>
+                            <a href="#" id="7" class="subcat">Aventura Narrativa</a>
+                            <a href="#" id="8" class="subcat">Point and Click</a>
+                            <a href="#" id="9" class="subcat">Walking Simulator</a>
+                        </div>
+
+                        <div class="banner-subcategoria">
+                            <a href="#">
+                                <img src="img/HaloInfinite.jpg" alt=" ">
+                            </a>
+                        </div>
+
+                        <div class="galeria-subcategoria">
+                            <a href="#">
+                                <img src="img/scorn.jpg" alt=" ">
+                            </a>
+                            <a href="# ">
+                                <img src="img/stalker1.jpg" alt=" ">
+                            </a>
+                            <a href="# ">
+                                <img src="img/stalker2.jpg" alt=" ">
+                            </a>
+                            <a href="# ">
+                                <img src="img/stalker3.jpg" alt=" ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategoria" data-categoria="Lucha">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                            <h3 class="subtitulo">Lucha</h3>
+                            <a href="# " id="10" class="subcat">Boxeo</a>
+                            <a href="# " id="11" class="subcat">Lucha 1º Persona</a>
+                            <a href="# " id="12" class="subcat">Lucha 2Ds</a>
+                            <a href="# " id="13" class="subcat">Lucha 3D</a>
+                            <a href="# " id="14" class="subcat">MMA</a>
+                            <a href="# " id="15" class="subcat">Lucha tipo Melee</a>
+                        </div>
+
+                        <div class="banner-subcategoria">
+                            <a href="#">
+                                <img src="./img/ropa-banner-1.png" alt=" ">
+                            </a>
+                        </div>
+
+                        <div class="galeria-subcategoria">
+                            <a href="#">
+                                <img src="./img/ropa-galeria-1.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/ropa-galeria-2.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/ropa-galeria-3.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/ropa-galeria-4.png" alt=" ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategoria" data-categoria="Puzle">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                            <h3 class="subtitulo">Puzle</h3>
+                            <a href="#" id="16" class="subcat">Plataformas</a>
+                            <a href="#" id="17" class="subcat">Escape Rooms</a>
+                            <a href="#" id="18" class="subcat">Musicak</a>
+                            <a href="#" id="19" class="subcat">Objetos Ocultos</a>
+                            <a href="#" id="20" class="subcat">Sudoku</a>
+                        </div>
+
+                        <div class="banner-subcategoria">
+                            <a href="#">
+                                <img src="./img/hogar-banner-1.png" alt=" ">
+                            </a>
+                        </div>
+
+                        <div class="galeria-subcategoria">
+                            <a href="#">
+                                <img src="./img/hogar-galeria-1.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/hogar-galeria-2.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/hogar-galeria-3.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/hogar-galeria-4.png" alt=" ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategoria" data-categoria="Accion">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                            <h3 class="subtitulo">Acci&oacute;n</h3>
+                            <a href="#" id="21" class="subcat">Aventura de Acci&oacute;n</a>
+                            <a href="#" id="22" class="subcat">Casual</a>
+                            <a href="#" id="23" class="subcat">Metroidvania</a>
+                            <a href="#" id="24" class="subcat">Run and Gun</a>
+                            <a href="#" id="25" class="subcat">Arcade</a>
+                            <a href="#" id="26" class="subcat">Hack and Slash</a>
+                            <a href="#" id="27" class="subcat">Survival Horror</a>
+                            <a href="#" id="28" class="subcat">Zombies</a>
+                        </div>
+
+                        <div class="banner-subcategoria">
+                            <a href="#">
+                                <img src="./img/juegos-banner-1.png" alt=" ">
+                            </a>
+                        </div>
+
+                        <div class="galeria-subcategoria">
+                            <a href="#">
+                                <img src="./img/juegos-galeria-1.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/juegos-galeria-2.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/juegos-galeria-3.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/juegos-galeria-4.png" alt=" ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategoria" data-categoria="Deportes">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+                            <h3 class="subtitulo">Deportes</h3>
+                            <a href="#" id="29" class="subcat">Ajedrez</a>
+                            <a href="#" id="30" class="subcat">Caza</a>
+                            <a href="#" id="31" class="subcat">Rugby</a>
+                            <a href="#" id="32" class="subcat">Tenis</a>
+                            <a href="#" id="33" class="subcat">Hockey</a>
+                            <a href="#" id="34" class="subcat">Manager</a>
+                        </div>
+
+                        <div class="banner-subcategoria">
+                            <a href="#">
+                                <img src="./img/belleza-banner-1.png" alt=" ">
+                            </a>
+                        </div>
+
+                        <div class="galeria-subcategoria">
+                            <a href="#">
+                                <img src="./img/belleza-galeria-1.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/belleza-galeria-2.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/belleza-galeria-3.png" alt=" ">
+                            </a>
+                            <a href="#">
+                                <img src="./img/belleza-galeria-4.png" alt=" ">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contenedor">
+        <article id="center" class="center">
+
+        </article>
+        <div class="container">
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
+    <script src="src/main.js"></script>
+    <section id=Mensaje_Cookies>
+        <!--La URL incluida es la parte que se ha de modificar -->
+        <div class="cookiesms" id="cookie1"> Esta web utiliza cookies, puedes ver nuestra <a href="tu-url-donde-explicas-la-politica-de-cookies">la política de cookies, aquí</a> Si continuas navegando estás aceptándola
+            <button onclick="controlcookies()">Aceptar</button>
+            <div class="cookies2" onmouseover="document.getElementById('cookie1').style.bottom = '0px';">Política de cookies +
+            </div>
+        </div>
+        <script type="text/javascript">
+            if (localStorage.controlcookie > 0) {
+                document.getElementById('cookie1').style.bottom = '-50px';
+            }
+        </script>
+    </section>
+</body>
+
+</html>
